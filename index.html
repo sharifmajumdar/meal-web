@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            
+                <img class="logo-hero" src="logo.svg" alt="">
+            
+            
+                <nav>
+                    <a href="#">Home</a> |
+                    <a href="#">Recipes</a> |
+                    <a href="#">About</a> |
+                    <a href="#">Contact</a> |
+                    <a href="#">FAQ</a>
+                </nav>
+           
+        </div>
+        <div id="content">
+            <div id="search">
+                <input id="input-field" type="text" placeholder="Search your food here">
+                <button id="submit" onclick="showProduct()">Search</button>
+            </div>
+            <div id="meal-items"></div>
+            <!-- <div id="meal-items2"></div> -->
+            <script src="meal.js"></script>
+        </div>
+        <div id="footer">
+            ©2022 Sharif
+        </div>
+    </div>
+</body>
+</html>

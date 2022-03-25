@@ -1,0 +1,116 @@
+function searchData(){
+    const subButton = document.getElementById("submit");
+    subButton.addEventListener("click", function(){
+        const searchItem = document.getElementById("input-field");
+        const searchValue = searchItem.value;
+        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => showProductDetail(data));
+    })
+}
+
+
+/* const logoImg = document.getElementsByClassName("logo-hero");
+if(logoImg){
+    mealContainer.style.display = "block";
+} */
+/* const url = `https://www.themealdb.com/api/json/v1/1/categories.php`;
+fetch(url)
+    .then(res => res.json())
+    .then(data => displayMeal(data));
+
+const mealContainer = document.getElementById("meal-items");
+const mealContainer2 = document.getElementById("meal-items2");
+
+const displayMeal = mealList => {
+    const mealItems = mealList.categories;
+    for (let i = 0; i < mealItems.length; i++) {
+        const item = mealItems[i];
+        const mealDiv = document.createElement("div");
+        mealDiv.className = "meals-categories";
+        const mealInfo = `
+            <h3 class="meal-header">${item.strCategory}</h3><br>
+            <img src="${item.strCategoryThumb}">      
+            <button onClick="showDetail('${item.strCategory}')">Show Details</button>
+            `
+        mealDiv.innerHTML = mealInfo;
+        mealContainer.appendChild(mealDiv);
+    }
+} */
+
+/* const showDetail = mealCat => {
+    if(mealCat == "Side" || mealCat == "Dessert" 
+        || mealCat == "Miscellaneous" || mealCat == "Starter"){
+        alert("The clicked item is not available");
+    }
+    else{
+        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealCat}`;
+        //https://www.themealdb.com/api/json/v1/1/filter.php?c=beef
+        fetch(url)
+            .then(res => res.json())
+            .then(data => showProductDetail(data));
+    }
+}  
+ */
+//const mealContainer = document.getElementById("meal-items");
+//const mealContainer2 = document.getElementById("meal-items2");
+const showProductDetail = product => {
+    //mealContainer.style.display = "none";
+    const mealContainer = document.getElementById("meal-items");
+    const productItem = product.meals;
+    for (let i = 0; i < productItem.length; i++) {
+        const mealInd = productItem[i];
+        const productDiv = document.createElement("div");
+        productDiv.className = "meals-categories";
+        const productInfo = `
+            <h3 class="meal-header2">${mealInd.strMeal +", " + mealInd.strArea}</h3><br>
+            <img class="meal-img" src="${mealInd.strMealThumb}"><br>
+            <p>${mealInd.strInstructions}</p>
+            `
+        productDiv.innerHTML = productInfo;
+        mealContainer.appendChild(productDiv);
+    }
+/*     const preItm = `
+        <button class="previous-button" onClick="displayMealList()">Previous</button>
+        `
+    preItm.className = "previous-button";
+    const preDiv = document.createElement("div");
+    preDiv.className = "previous-div";
+    const btn = document.createElement("button");
+    btn.innerText = "Previous";
+    preDiv.innerHTML = preItm; 
+    mealContainer2.appendChild(preDiv); */
+}
+/* function showProduct(){
+    mealContainer.style.display = "none";
+    mealContainer2.style.display = "none";
+    const inputField = document.getElementById("input-field");
+    const inputValue = inputField.value;
+    const submitButton = document.getElementById("submit");
+    submitButton.addEventListener("click", function(){
+        if(inputValue == "Beef" || inputValue == "beef" || 
+            inputValue == "Chicken" || inputValue == "chicken" ||
+            inputValue == "Dessert" || inputValue == "dessert" ||
+            inputValue == "Lamb" || inputValue == "lamb" ||
+            inputValue == "Miscellaneous" || inputValue == "miscellaneous" ||
+            inputValue == "Pasta" || inputValue == "pasta" ||
+            inputValue == "Pork" || inputValue == "pork" ||
+            inputValue == "Seafood" || inputValue == "seafood" ||
+            inputValue == "Side" || inputValue == "side" ||
+            inputValue == "Starter" || inputValue == "starter" ||
+            inputValue == "Vegan" || inputValue == "vegan" ||
+            inputValue == "Vegetarian" || inputValue == "vegetarian" ||
+            inputValue == "Breakfast" || inputValue == "breakfast" ||
+            inputValue == "Goat" || inputValue == "goat"){
+            
+            alert("Your recipes are here");
+        }
+        elseif (condition) {
+            
+        }
+        else{
+            alert("Wrong keyword");
+        } 
+    });
+} */
