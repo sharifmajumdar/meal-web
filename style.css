@@ -59,10 +59,13 @@ nav{
 }
 #meal-items2{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 30px;
     margin-left: 50px;
     margin-top: 20px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 .meals-categories{
     border: 1px solid burlywood;
